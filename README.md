@@ -8,9 +8,12 @@ This is NOT a long-running container, it just just echoes a greeting and termina
 You need a Red Hat Developer's account to grab the service account user name and token to download the UBI base images. It is free. :-)
 You can also use the unauthenticated registry while it is still available.
 
+Register at https://developers.redhat.com and, while logged in to the Developer's web site, access https://access.redhat.com/terms-based-registry/ to create your registry service account.
+
 On RHEL 7.6+, CentOS, and Fedora, you do:
 
 ```
+$ sudo podman login -u <your service account name> -p <your service account token>
 $ sudo podman build -t echo .
 $ sudo podman run --name echo localhost/echo
 Hello, world
